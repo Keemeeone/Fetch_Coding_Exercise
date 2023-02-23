@@ -1,0 +1,37 @@
+Fetch Coding Exercise - Software Engineering Internship
+
+1.	Why did you choose the tools, libraries, and language you used for the coding exercise?
+
+    The code is written in Java; I am better at Java than others. However, Java is functional.
+The code uses built-in Java libraries such as BufferedReader, FileReader, and Collections to read
+and sort data. For this specific coding exercise, Java was a good choice because it allowed the code
+to easily handle file input and output, perform sorting of data, and manage collections of objects.
+The code also uses a Scanner class to accept user input, which is a convenient way to get feedback
+from the user in the command line.
+
+2.	What are the advantages and disadvantages of your solution?
+
+    For disadvantages, the code could be more efficient regarding time and memory usage as it iterates
+through the entire list of transactions for every payer. However, the code is well-organized and
+ easy to understand, with clear method names and comments explaining their functionality. Moreover,
+ the code follows the requirements of the problem, ensuring that the oldest points are spent first,
+ and no payer's points go negative.
+
+3.	What has been a favorite school/personal project thus far? What about it that challenged you?
+
+    My favorite project was developing a public community app that displays the shelter status of
+pets and enables users to help abandoned dogs while sharing information with other users. Working
+on a project that positively impacted society and helped abandoned dogs find homes was incredibly
+fulfilling. In my role, I managed essential documents, including the proposal, information architecture,
+and wireframe, which allowed me to develop project management and organization skills. Additionally,
+I improved my design skills using Figma, CSS, and JavaScript, which was a rewarding learning experience.
+Overall, this project was a standout favorite for me due to the opportunity for personal and professional
+growth and its potential to make a difference in the world. Through this project, I, who had previously
+only performed on the back end, learned much about the interaction between the back and front end.
+One of the biggest challenges I faced during the project was proving the greedy algorithm.
+The algorithm presented unique difficulties, and I had to spend significant time researching
+and experimenting to find the most effective solution. Despite the challenge, working through
+this problem was incredibly rewarding, as it allowed me to develop my problem-solving skills
+and gain a deeper understanding of the underlying principles of the algorithm. Overall,
+the experience of working through this challenge was a valuable learning experience that
+I will be able to apply to future projects.

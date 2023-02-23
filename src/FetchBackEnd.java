@@ -25,6 +25,11 @@ class FetchBackEnd {
      * @param args
      */
     public static void main(String[] args) {
+        if (args.length != 2){
+            System.out.println("Error: Need two argument! \n " +
+                    "ex) 5000(amount of points to spend) transactions.csv(name of CSV file)");
+            return;
+        }
         int pointsToSpend = Integer.parseInt(args[0]);
         List<Map<String, Object>> transactions = readCSV(args[1]);
         sortTransactions(transactions);
