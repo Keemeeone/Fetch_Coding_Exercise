@@ -19,15 +19,27 @@ class FetchBackEnd {
     /**
      * This is a main method
      * Use linux and command argument Line:
+     *
      * javac FetchBackEnd.java
      * java FetchBackEnd 5000(amount of points to spend) transactions.csv(name of CSV file)
+     * CSV file should have same format:
+     *
+     * "payer","points","timestamp"
+     * "DANNON",1000,"2020-11-02T14:00:00Z"
+     * "UNILEVER",200,"2020-10-31T11:00:00Z"
+     * "DANNON",-200,"2020-10-31T15:00:00Z"
+     * "MILLER COORS",10000,"2020-11-01T14:00:00Z"
+     * "DANNON",300,"2020-10-31T10:00:00Z"
+     * "JONAH",2000,"2020-10-31T10:00:00Z"
+     * "JONAH",-100,"2020-11-01T10:00:00Z"
+     *  NO EXTRA SPACE HERE
      *
      * @param args
      */
     public static void main(String[] args) {
-        if (args.length != 2){
+        if (args.length != 2 && args[1] != null ){
             System.out.println("Error: Need two argument! \n " +
-                    "ex) 5000(amount of points to spend) transactions.csv(name of CSV file)");
+                    "ex) 5000(amount of points to spend) transactions.csv(name of csv file)");
             return;
         }
         int pointsToSpend = Integer.parseInt(args[0]);
@@ -55,12 +67,12 @@ class FetchBackEnd {
             String[] employee = line.split(",");
 
             while ((line = br.readLine()) != null) {
-                employee = line.split(",");
+                employee = line.trim().split(",");
                 Map<String, Object> transactions = new HashMap<>();
-                transactions.put("payer", employee[0]);
-                transactions.put("points", Integer.parseInt(employee[1]));
-                transactions.put("timestamp", employee[2]);
-                listMap.add(transactions);
+                    transactions.put("payer", employee[0]);
+                    transactions.put("points", Integer.parseInt(employee[1]));
+                    transactions.put("timestamp", employee[2]);
+                    listMap.add(transactions);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -116,6 +128,7 @@ class FetchBackEnd {
             if (balances.get(payer) != null && balances.get(payer) < 0) {
                 throw new IllegalArgumentException("Insufficient points for payer " + payer);
             }
+
             // spend points
             if (points < pointsToSpend) {
                 pointsToSpend -= points;
