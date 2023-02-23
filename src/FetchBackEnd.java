@@ -22,6 +22,7 @@ class FetchBackEnd {
      *
      * javac FetchBackEnd.java
      * java FetchBackEnd 5000(amount of points to spend) transactions.csv(name of CSV file)
+     *
      * CSV file should have same format:
      *
      * "payer","points","timestamp"
