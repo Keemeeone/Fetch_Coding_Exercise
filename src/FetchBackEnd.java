@@ -116,11 +116,13 @@ class FetchBackEnd {
             String payer = (String) transaction.get("payer");
             int points = (int) transaction.get("points");
 
-            // skip transactions with zero points
+            // point to be 0 and add to pointsToSpend
             if (points < 0) {
                 pointsToSpend += Math.abs(points);
                 points = 0;
             }
+
+            // skip transactions with zero points
             if (points == 0) {
                 continue;
             }
@@ -150,5 +152,4 @@ class FetchBackEnd {
         }
         return balances;
     }
-
 }
